@@ -1,0 +1,70 @@
+{
+  "name": "@inqludeit/qualweb-plugin-cmp",
+  "version": "1.1.0",
+  "description": "QualWeb plugin to dismiss cookie banners during evaluation.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@8.14.1",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "src"
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./*": {
+        "default": "./dist/*.js",
+        "types": "./dist/*.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "pretest": "pnpm build",
+    "test": "pnpm test:unit",
+    "test:unit": "cross-env TS_NODE_PROJECT=test/tsconfig.json mocha",
+    "test:coverage": "nyc mocha",
+    "ts-run": "node -r ts-node/register",
+    "build": "npx tsc --build -v",
+    "build:force": "npx tsc --build -f -v",
+    "clean": "npx tsc --build --clean && rimraf dist",
+    "release": "pnpm build && pnpm changeset publish",
+    "release-snapshot": "pnpm build && pnpm changeset version --snapshot next && pnpm changeset publish --tag next",
+    "prepublish": "pnpm build"
+  },
+  "author": "Johannes L. Borresen <jlb@inqludeit.dk>",
+  "license": "MIT",
+  "dependencies": {
+    "@inqludeit/cmp-b-gone": "^0.1.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.5",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@qualweb/types": "^0.7.25",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20",
+    "chai": "^4.4.0",
+    "mocha": "^10.2.0",
+    "puppeteer": "^21.7.0",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@qualweb/core": "^0.7.53"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tellus/qualweb-plugin-cmp.git"
+  }
+}

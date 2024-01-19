@@ -1,0 +1,20 @@
+{
+  "configName": "Consent Management Platform Management (unit tests)",
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../",
+    "paths": {
+      "@src/*": [ "src/*" ],
+      "@src": [ "src" ],
+      "@test/*": [ "test/*" ],
+      "@test": [ "test" ],
+    },
+    "types": [
+      "mocha",
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+  ],
+}

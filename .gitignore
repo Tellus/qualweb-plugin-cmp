@@ -1,0 +1,19 @@
+# These should be filled out by 'pnpm install'
+node_modules/
+
+# Rebuilt by TS.
+dist
+src/src_dist
+
+*.tsbuildinfo
+
+# Ignore archives.
+.zip
+.7z
+.tgz
+.tar.gz
+
+.nyc_output
+
+# NEVER commit private stuff like this.
+.npmrc
