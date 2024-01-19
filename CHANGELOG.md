@@ -1,5 +1,11 @@
 # @inqludeit/qualweb-plugin-cmp
 
+## 2.0.1
+
+### Patch Changes
+
+- 37aefad: Update README.md file to reflect new usage
+
 ## 2.0.0
 
 ### Major Changes
