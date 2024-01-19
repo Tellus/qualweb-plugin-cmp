@@ -48,9 +48,4 @@ jobs:
           pnpm build
           pnpm changeset version --snapshot next
           pnpm changeset publish --tag next
-          
-      # - name: Release
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #     GITHUB_TOKEN: ${{ secrets.TELLUS_ACCESS_TOKEN }}
-      #   run: pnpm semantic-release
+
